@@ -1,0 +1,13 @@
+<% content_for :title, "Notatka" %>
+<div class="container">
+
+<p>Treść: <strong><%= @vechicle_note.name %></strong></p>
+<p>Autor: <strong><%= @vechicle_note.user %></strong></p>
+<p>Pojazd: <strong><%= Vechicle.where(id:@vechicle_note.vechicle_id).pluck(:first_name).last %>
+           <%= Vechicle.where(id:@vechicle_note.vechicle_id).pluck(:last_name).last %></strong></p>
+
+<div align="center">
+  <%= link_to 'Edycja notatki', edit_vechicle_note_path(@vechicle_note), class:"btn btn-warning" %>
+  <%= link_to 'Powrót do pojazdu', vechicles_path(@vechicle_note.vechicle_id), class:"btn btn-default" %>
+  <%= link_to 'Lista notatek', vechicle_notes_path, class:"btn btn-primary" %>
+</div>

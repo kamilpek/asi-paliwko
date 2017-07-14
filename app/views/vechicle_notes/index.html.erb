@@ -1,0 +1,30 @@
+<% content_for :title, "Lista notatek" %>
+
+<div class="container">
+
+<h1 class=page-header>Lista notatek</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Autor</th>
+      <th>Pojazd</th>
+      <th>Akcje</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vechicle_notes.each do |vechicle_note| %>
+      <tr>
+        <td><%= vechicle_note.name %></td>
+        <td><%= vechicle_note.user %></td>
+        <td><%= vechicle_note.vechicle %></td>
+        <td><%= link_to 'Przejdź', vechicle_note, class:"btn btn-xs btn-success" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+</div>

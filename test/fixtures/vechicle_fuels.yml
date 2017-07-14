@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  company: MyString
+  user: one
+  vechicle: one
+  value: 1
+  mileage: 1
+  desc: MyText
+
+two:
+  company: MyString
+  user: two
+  vechicle: two
+  value: 1
+  mileage: 1
+  desc: MyText

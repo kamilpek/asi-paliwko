@@ -1,0 +1,45 @@
+<%= simple_form_for(@vechicle_fuel) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="input-group">
+      <span class="input-group-addon">Samochód</span>
+        <% if params[:vid].nil? %>
+          <%= f.collection_select :vechicle_id, Vechicle.all.order("name"), :id, :name_for_select, {prompt: "Wybierz", id:"vachicleselect"}, {class:"form-control", required: true} %>
+        <% else %>
+          <%= f.text_field :vechicle_id, :value => "#{Vechicle.where(id:params[:vid]).pluck(:name).last} – #{Vechicle.where(id:params[:vid]).pluck(:plates).last}", :readonly => true, class:"form-control" %>
+          <%= f.hidden_field :vechicle_id, :value => params[:vid] %>
+        <% end %>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Stacja</span>
+       <%= f.text_field :company, placeholder:"Nazwa stacji paliw", :autofocus => true, class:"form-control", required: true %><br>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Ilość</span>
+       <%= f.number_field :value, min:1, placeholder:"Ilość zatankowanego paliwa wyrażona w litrach", class:"form-control", required: true %><br>
+      <span class="input-group-addon">l</span>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Koszt</span>
+       <%= f.number_field :cost, min:1, placeholder:"Koszt zatankowanego paliwa wyrażona w złotówkach", class:"form-control", required: true %><br>
+      <span class="input-group-addon">zł</span>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Przebieg</span>
+       <%= f.number_field :mileage, min:1, placeholder:"Wartość licznika tuż przed tankowaniem wyrażona w kilometrach", class:"form-control", required: true %><br>
+      <span class="input-group-addon">km</span>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Uwagi(opcjonalnie)</span>
+       <%= f.text_field :mileage, placeholder:"Uwagi i notatki do tankowania, wypełniamy opcjonalnie", class:"form-control", required: true %><br>
+    </div><br>
+  </div>
+
+  <%= f.hidden_field :user_id, :value => current_user.id %>
+
+  <div align="center">
+    <%= f.submit "Zatwierdź", class:"btn btn-success" %>
+    <%= link_to 'Lista tankowań', vechicle_fuels_path, class:"btn btn-primary" %>
+  </div>
+<% end %>

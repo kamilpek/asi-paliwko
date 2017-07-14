@@ -1,0 +1,35 @@
+<% content_for :title, "Lista tankowań" %>
+<div class="container">
+
+<h1 class=page-header>Lista tankowań</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Stacja</th>
+      <th>Samochód</th>
+      <th>Ilość[l]</th>
+      <th>Koszt[zł]</th>
+      <th>Akcje</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vechicle_fuels.each do |vechicle_fuel| %>
+      <tr>
+        <td><%= vechicle_fuel.company %></td>
+        <td><%= Vechicle.where(id:vechicle_fuel.vechicle_id).pluck(:plates).last %></td>
+        <td><%= vechicle_fuel.value %></td>
+        <td><%= vechicle_fuel.cost %></td>
+        <td><%= link_to 'Przejdź', vechicle_fuel, class:"btn btn-xs btn-success" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<div align="center">
+  <%= link_to 'Nowe tankowanie', new_vechicle_fuel_path, class:"btn btn-success" %>
+</div>
+
+</div>

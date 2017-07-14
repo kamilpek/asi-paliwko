@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  plates: MyString
+  productiondate: 2017-07-11
+  registration: 2017-07-11
+  lastrevision: 2017-07-11
+  nextrevison: 2017-07-11
+  desc: MyText
+  mileage: 1
+  photo: MyString
+  attachments: 
+  status: false
+
+two:
+  name: MyString
+  plates: MyString
+  productiondate: 2017-07-11
+  registration: 2017-07-11
+  lastrevision: 2017-07-11
+  nextrevison: 2017-07-11
+  desc: MyText
+  mileage: 1
+  photo: MyString
+  attachments: 
+  status: false

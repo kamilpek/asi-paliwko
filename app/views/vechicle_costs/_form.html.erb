@@ -1,0 +1,16 @@
+<%= simple_form_for(@vechicle_cost) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.association :user %>
+    <%= f.association :vechicle %>
+    <%= f.input :cost %>
+    <%= f.input :desc %>
+  </div>
+
+  <div align="center">
+    <%= f.submit 'Zatwierdź', class:"btn btn-success" %>
+    <%= link_to 'Lista kosztów', vechicle_costs_path, class:"btn btn-primary" %>
+  </div>
+<% end %>

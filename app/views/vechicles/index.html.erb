@@ -1,0 +1,33 @@
+<% content_for :title, "Lista pojazdów" %>
+
+<div class="container">
+
+<h1 class=page-header>Lista pojazdów</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Tablice</th>
+      <th>Przebieg</th>
+      <th>Akcje</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vechicles.each do |vechicle| %>
+      <tr>
+        <td><%= vechicle.name %></td>
+        <td><%= vechicle.plates %></td>
+        <td><%= vechicle.mileage %> km</td>
+        <td><%= link_to "Przejdź", vechicle, class:"btn btn-xs btn-success" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<div align="center">
+  <%= link_to 'Nowy samochód', new_vechicle_path, class:"btn btn-success" %>
+</div>
+</div<
+<br>

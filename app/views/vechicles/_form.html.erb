@@ -1,0 +1,53 @@
+<%= simple_form_for(@vechicle) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="input-group">
+      <span class="input-group-addon">Nazwa</span>
+       <%= f.text_field :name, placeholder:"Nazwa", :autofocus => true, class:"form-control", required: true %><br>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Tablice rejestracyjne</span>
+       <%= f.text_field :plates, placeholder:"GKS", class:"form-control", required: true %><br>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Data produkcji</span>
+       <%= f.text_field :productiondate, type:"date", class:"form-control", required: true %><br>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Data rejetracji</span>
+       <%= f.text_field :registration, type:"date", class:"form-control", required: true %><br>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Data osatatniego przeglądu</span>
+       <%= f.text_field :lastrevision, type:"date", class:"form-control", required: true %><br>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Data następnego przeglądu</span>
+       <%= f.text_field :nextrevison, type:"date", class:"form-control", required: true %><br>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Przebieg</span>
+       <%= f.number_field :mileage, class:"form-control", required: true %><br>
+      <span class="input-group-addon">km</span>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Krótki Opis</span>
+       <%= f.text_area :desc, placeholder:"Krótki Opis", class:"form-control", rows:"3" %><br>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Ilustracja</span>
+       <%= f.file_field :photo, class:"form-control" %>
+    </div><br>
+    <div class="input-group">
+      <span class="input-group-addon">Pliki/Dokumentacja</span>
+      <%= f.file_field :attachments, multiple: true, class:"form-control" %>
+   </div><br>
+  </div>
+
+  <div align="center">
+    <%= f.submit 'Zatwierdź', class:"btn btn-success" %>
+    <%= link_to 'Lista pojazdów', vechicles_path, class:"btn btn-primary" %>
+  </div>
+
+<% end %>
