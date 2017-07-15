@@ -1,0 +1,99 @@
+<% content_for :title, "Lista kosztów samochodów" %>
+
+<style type="text/css" media="print">
+  .dontprint
+  { display: none; }
+</style>
+
+<style type="text/css" media="screen">
+  .dontwww
+  { display: none; }
+</style>
+
+<div class="container">
+<h3 class=page-header>Roczne koszty samochodu – <%= @date.strftime("%Y") %>.</h3>
+
+<%= form_tag print_resume_month_vechicle_cost_path, :method => :get do %>
+  <div class="input-group dontprint">
+    <span class="input-group-addon">Urządzenie</span>
+    <%= collection_select :search, params[:search], Vechicle.order("name"), :id, :name_for_select, {prompt: "Wybierz"}, class:"form-control", :onchange => "this.form.submit()" %>
+  </div>
+<% end %>
+<br>
+<div class="row" align="center">
+  <div class="col-md-4 dontprint">
+    <%= link_to print_resume_month_vechicle_cost_path(date: @date - 1.year), class: "btn btn-info" do %>
+      <i class="fa-calendar-minus-o"> Poprzedni Miesiąc</i>
+    <% end %>
+  </div>
+  <div class="col-md-4 dontprint">
+    <h4 id="day"><%= l(@date, format: :calendar).titleize %></h4>
+  </div>
+  <div class="col-md-4 dontprint">
+    <%= link_to print_resume_month_vechicle_cost_path(date: @date + 1.year), class: "btn btn-info" do %>
+      <i class="fa-calendar-plus-o"> Następny Miesiąc</i>
+    <% end %>
+  </div>
+</div>
+<br>
+<table style="width:100%" border="1" class="dontwww">
+  <thead>
+    <tr>
+      <th>Samochód</th>
+      <th>Autor</th>
+      <th>Data</th>
+      <th>Treść</th>
+      <th>Koszt</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vechicle_costs.each do |vechicle_cost| %>
+      <tr>
+        <td><%= Vechicle.where(id:vechicle_cost.vechicle_id).pluck(:plates).last %></td>
+        <td><%= User.where(id:vechicle_cost.user_id).pluck(:first_name).last %> <%= User.where(id:vechicle_cost.user_id).pluck(:last_name).last %></td>
+        <td><%= vechicle_cost.created_at.strftime("%d.%m.%Y") if vechicle_cost.created_at? %></td>
+        <td><%= link_to vechicle_cost.name, vechicle_cost %></td>
+        <td><%= vechicle_cost.cost %> zł</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<table class="table dontprint">
+  <thead>
+    <tr>
+      <th>Samochód</th>
+      <th>Autor</th>
+      <th>Data</th>
+      <th>Treść</th>
+      <th>Koszt</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vechicle_costs.each do |vechicle_cost| %>
+      <tr>
+        <td><%= Vechicle.where(id:vechicle_cost.vechicle_id).pluck(:plates).last %></td>
+        <td><%= User.where(id:vechicle_cost.user_id).pluck(:first_name).last %> <%= User.where(id:vechicle_cost.user_id).pluck(:last_name).last %></td>
+        <td><%= vechicle_cost.created_at.strftime("%d.%m.%Y") if vechicle_cost.created_at? %></td>
+        <td><%= link_to vechicle_cost.name, vechicle_cost %></td>
+        <td><%= vechicle_cost.cost %> zł</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h6>Razem
+    Kwota: <strong><%= @vechicle_costs.sum(:cost) %> zł </strong>
+    Ilość: <strong><%= @vechicle_costs.count %></strong></h6>
+
+<div class="dontprint" align="center">
+  <%= link_to "Podsumowanie misięczne", print_resume_month_vechicle_cost_path(1), class:"btn btn-info" %>
+  <%= link_to "Podsumowanie roczne", print_resume_year_vechicle_cost_path(1), class:"btn btn-info" %>
+  <%= link_to "Lista Samochodów", vechicles_path, class:"btn btn-primary" %>
+  <a href="#" onclick="window.print();return false;" class="btn btn-success">Drukuj stronę</a>
+</div>
+
+</div>
+<br>

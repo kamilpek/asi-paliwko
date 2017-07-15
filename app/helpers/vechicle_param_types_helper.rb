@@ -1,0 +1,2 @@
+module VechicleParamTypesHelper
+end

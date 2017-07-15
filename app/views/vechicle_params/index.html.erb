@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vechicle Params</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Vechicle param type</th>
+      <th>User</th>
+      <th>Value</th>
+      <th>Desc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vechicle_params.each do |vechicle_param| %>
+      <tr>
+        <td><%= vechicle_param.vechicle_param_type %></td>
+        <td><%= vechicle_param.user %></td>
+        <td><%= vechicle_param.value %></td>
+        <td><%= vechicle_param.desc %></td>
+        <td><%= link_to 'Show', vechicle_param %></td>
+        <td><%= link_to 'Edit', edit_vechicle_param_path(vechicle_param) %></td>
+        <td><%= link_to 'Destroy', vechicle_param, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vechicle Param', new_vechicle_param_path %>

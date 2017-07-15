@@ -2,5 +2,15 @@
 
 <div class="container" align="center">
   <h1 class=page-header>Paliwko – Menedżer floty</h1>
-  <p><%= link_to 'Samochody', vechicles_path, class:"btn btn-success" %></p>
+
+  <h3 class=page-header>Listy</h3>
+  <p><%= link_to 'Samochody', vechicles_path, class:"btn btn-primary" %>
+     <%= link_to 'Koszty', vechicle_costs_path, class:"btn btn-primary" %>
+     <%= link_to 'Paliwo', vechicle_fuels_path, class:"btn btn-primary" %></p>
+
+  <h3 class=page-header>Statystyki</h3>
+  <p><%= link_to 'Samochody', stats_vechicles_path, class:"btn btn-info" %>
+     <%= link_to 'Koszty', stats_costs_path, class:"btn btn-info" %>
+     <%= link_to 'Paliwo', stats_fuel_path, class:"btn btn-info" %></p>
+
 </div>

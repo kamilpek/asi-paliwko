@@ -1,0 +1,34 @@
+<% content_for :title, "Panel Administracyjny" %>
+<% content_for :menu, "admin" %>
+<br>
+<div class="container">
+  <h1 class=page-header>Panel Administracyjny</h1>
+
+  <h3 class=page-header>Statystyki</h3>
+  <div class="row" align="center">
+    <div class="col-md-4">
+      <%= link_to 'Koszty', stats_costs_path, class:"btn btn-info" %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to 'Paliwo', stats_fuel_path, class:"btn btn-info" %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to 'Samochody', stats_vechicles_path, class:"btn btn-info" %>
+    </div>
+  </div>
+
+  <h3 class=page-header>Ustawienia ogólne</h3>
+  <div class="row" align="center">
+    <div class="col-md-4">
+      <%= link_to 'Użytkownicy', admin_users_path, class:'btn btn-danger' %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to 'Uprawnienia ogólne', roles_path, class:'btn btn-warning' %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to 'Rodzaje parametrów', vechicle_param_types_path, class:'btn btn-primary' %>
+    </div>
+  </div>
+
+</div>
+</br>

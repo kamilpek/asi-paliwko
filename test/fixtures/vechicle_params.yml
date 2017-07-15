@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vechicle_param_type: one
+  user: one
+  value: 1
+  desc: MyString
+
+two:
+  vechicle_param_type: two
+  user: two
+  value: 1
+  desc: MyString

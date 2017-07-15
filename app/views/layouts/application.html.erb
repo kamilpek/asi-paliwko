@@ -2,7 +2,6 @@
 <html lang="pl">
 <html>
   <head>
-    <title>Paliwko</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +9,7 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag "jsapi", "chartkick" %>
   </head>
 
   <body>
@@ -21,6 +21,7 @@
     <% end %>
       <%= render partial: 'layouts/messages', flash: flash %>
     <%= yield %>
+    <p align="center" class="dontprint" ><%= link_to "\u00A9 2017 Kamil Pek", pages_about_path %></p>
   </body>
 
 </html>

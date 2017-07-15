@@ -8,7 +8,7 @@
     <tr>
       <th>Tytuł</th>
       <th>Pojazd</th>
-      <th>Koszt</th>
+      <th>Koszt [zł]</th>
       <th>Akcje</th>
     </tr>
   </thead>
@@ -17,7 +17,7 @@
     <% @vechicle_costs.each do |vechicle_cost| %>
       <tr>
         <td><%= vechicle_cost.name %></td>
-        <td><%= vechicle_cost.vechicle %></td>
+        <td><%= Vechicle.where(id:vechicle_cost.vechicle_id).pluck(:plates).last %></td>
         <td><%= vechicle_cost.cost %></td>
         <td><%= link_to 'Przejdź', vechicle_cost, class:"btn btn-xs btn-success" %></td>
       </tr>
@@ -29,6 +29,9 @@
 
 <div align="center">
   <%= link_to 'Nowy koszt pojazdu', new_vechicle_cost_path, class:"btn btn-success" %>
+  <%= link_to "Podsumowanie misięczne", print_resume_month_vechicle_cost_path(1), class:"btn btn-info" %>
+  <%= link_to "Podsumowanie roczne", print_resume_year_vechicle_cost_path(1), class:"btn btn-info" %>
 </div>
 
 </div>
+<br>

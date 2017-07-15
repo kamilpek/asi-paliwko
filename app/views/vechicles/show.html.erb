@@ -13,11 +13,15 @@
     <p>Następny przegląd: <strong><%= @vechicle.nextrevison %></strong></p>
     <p>Opis: <strong><%= @vechicle.desc %></strong></p>
     <p>Przebieg: <strong><%= @vechicle.mileage %> km</strong></p>
-    <div>
+    <p>
       <%= link_to 'Edycja pojazdu', edit_vechicle_path(@vechicle), class:"btn btn-warning" %>
       <%= link_to 'Lista pojazdów', vechicles_path, class:"btn btn-primary" %>
-      <%= link_to 'Dodaj tankowanie', new_vechicle_fuel_path(vid:@vechicle.id), class:"btn btn-default" %>
-    </div>
+    </p>
+    <p>
+      <%= link_to 'Parametry', vechicle_parameters_vechicle_path(id:@vechicle.id, date: @date), class:"btn btn-info" %>
+      <%= link_to 'Tankowania', vechicle_fuels_vechicle_path(id:@vechicle.id), class:"btn btn-info" %>
+      <%= link_to 'Koszty', vechicle_costs_vechicle_path(id:@vechicle.id), class:"btn btn-info" %>
+    </p>
   </div>
   <div class="col-md-4" align="center">
     <% if @vechicle.photo? %>
@@ -33,75 +37,6 @@
       <% end %>
     <% else %>
       <p align="center"><i>brak załączników</i></p>
-    <% end %>
-  </div>
-</div>
-<br>
-
-<div class="row">
-  <div class="col-md-6">
-    <h4 id="comments"> Tankowania </h4>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Autor</th>
-          <th>Data</th>
-          <th>Tablice</th>
-          <th>Ilość[l]</th>
-          <th>Koszt[zł]</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @vechicle_fuels.each do |vechicle_fuel| %>
-        <% if @vechicle.id == VechicleFuel.where(id:vechicle_fuel.vechicle_id).pluck(:id).last %>
-          <tr>
-            <td><%= User.where(id:vechicle_fuel.user_id).pluck(:first_name).last %> <%= User.where(id:vechicle_fuel.user_id).pluck(:last_name).last %></td>
-            <td><%= vechicle_fuel.created_at.strftime("%d.%m.%Y") if vechicle_fuel.created_at?%></td>
-            <td><%= Vechicle.where(id:vechicle_fuel.vechicle_id).pluck(:plates).last %></td>
-            <td><%= vechicle_fuel.value %></td>
-            <td><%= vechicle_fuel.cost %></td>
-          </tr>
-        <% end %><% end %>
-      </tbody>
-    </table>
-  </div>
-  <div class="col-md-6">
-    <h4 id="comments"> Koszty pojazdu </h4>
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Autor</th>
-          <th>Data</th>
-          <th>Treść</th>
-          <th>Koszt</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @vechicle_costs.each do |vechicle_cost| %>
-        <% if @vechicle.id == VechicleCost.where(id:vechicle_cost.vechicle_id).pluck(:id).last %>
-          <tr>
-            <td><%= User.where(id:vechicle_cost.user_id).pluck(:first_name).last %> <%= User.where(id:vechicle_cost.user_id).pluck(:last_name).last %></td>
-            <td><%= vechicle_cost.created_at.strftime("%d.%m.%Y") if vechicle_cost.created_at? %></td>
-            <td><%= link_to vechicle_cost.name, vechicle_cost %></td>
-            <td><%= vechicle_cost.cost %> zł</td>
-          </tr>
-        <% end %><% end %>
-      </tbody>
-    </table>
-      <%= form_for VechicleCost.new do |f| %>
-        <%= f.hidden_field :vechicle_id, :value => @vechicle.id  %>
-        <%= f.hidden_field :user_id, :value => current_user.id %>
-        <div class="col-md-12">
-        <div class="input-group">
-          <span class="input-group-addon">Treść</span>
-            <%= f.text_field :name, type:"text", placeholder:"Opis kosztu", class:"form-control", required: true %>
-          <span class="input-group-addon">Koszt</span>
-            <%= f.number_field :cost, type:"text", min:0, placeholder:"Koszt w złotówkach", class:"form-control", required: true %>
-          <span class="input-group-btn">
-              <%= f.submit "Dodaj koszt", class:"btn btn-success" %>
-          </span>
-        </div>
-      </div>
     <% end %>
   </div>
 </div>
@@ -144,3 +79,6 @@
     <% end %>
   </div>
 </div>
+
+</div>
+<br>

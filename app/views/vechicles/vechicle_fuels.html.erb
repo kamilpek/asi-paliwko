@@ -1,0 +1,63 @@
+<% content_for :title, "Tankowania" %>
+
+<div class="container">
+  <h1 class="page-header"><%= "#{@vechicle.name} #{@vechicle.plates}" %>
+      <%= link_to "Powrót do samochodu", vechicle_path(@vechicle.id), class:"btn btn-sm btn-primary" %></h1>
+
+  <h4 class="page-header">Nowe tankowanie</h4>
+  <div class="row" align="center">
+    <div class="col-md-12">
+      <%= link_to 'Dodaj tankowanie', new_vechicle_fuel_path(vid:@vechicle.id), class:"btn btn-success" %>
+    </div>
+  </div>
+  <br>
+
+  <h4 class="page-header">Lista tankowań</h4>
+  <div class="row" align="center">
+    <div class="col-md-4">
+      <%= link_to vechicle_fuels_vechicle_path(date: @date - 1.month), class: "btn btn-info" do %>
+        <i class="fa-calendar-minus-o"> Poprzedni Miesiąc</i>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <h4 id="day"><%= l(@date, format: :calendar).titleize %></h4>
+    </div>
+    <div class="col-md-4">
+      <%= link_to vechicle_fuels_vechicle_path(date: @date + 1.month), class: "btn btn-info" do %>
+        <i class="fa-calendar-plus-o"> Następny Miesiąc</i>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Autor</th>
+        <th>Data</th>
+        <th>Tablice</th>
+        <th>Ilość[l]</th>
+        <th>Koszt[zł]</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vechicle_fuels.order("created_at desc").each do |vechicle_fuel| %>
+        <% if vechicle_fuel.created_at %>
+          <% if @date.strftime("%Y-%m") == vechicle_fuel.created_at.strftime("%Y-%m") %>
+          <tr>
+            <td><%= User.where(id:vechicle_fuel.user_id).pluck(:first_name).last %> <%= User.where(id:vechicle_fuel.user_id).pluck(:last_name).last %></td>
+            <td><%= vechicle_fuel.created_at.strftime("%d.%m.%Y") if vechicle_fuel.created_at?%></td>
+            <td><%= Vechicle.where(id:vechicle_fuel.vechicle_id).pluck(:plates).last %></td>
+            <td><%= vechicle_fuel.value %></td>
+            <td><%= vechicle_fuel.cost %></td>
+          </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <div align="center">
+    <p><%= will_paginate @vechicle_fuels, renderer: BootstrapPagination::Rails %></p>
+  </div>
+</div>
+</div>
+</br>

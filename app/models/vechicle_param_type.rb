@@ -1,0 +1,2 @@
+class VechicleParamType < ApplicationRecord
+end

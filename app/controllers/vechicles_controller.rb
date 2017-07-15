@@ -65,6 +65,27 @@ class VechiclesController < ApplicationController
     end
   end
 
+  def vechicle_parameters
+    @vechicle = Vechicle.find(params[:id])
+    @vechicle_params = VechicleParam.where(vechicle_id:@vechicle.id)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @vechicle_params = @vechicle_params.paginate(:page => params[:page], :per_page => 10)
+  end
+
+  def vechicle_fuels
+    @vechicle = Vechicle.find(params[:id])
+    @vechicle_fuels = VechicleFuel.where(vechicle_id:@vechicle.id)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @vechicle_fuels = @vechicle_fuels.paginate(:page => params[:page], :per_page => 10)
+  end
+
+  def vechicle_costs
+    @vechicle = Vechicle.find(params[:id])
+    @vechicle_costs = VechicleCost.where(vechicle_id:@vechicle.id)
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @vechicle_costs = @vechicle_costs.paginate(:page => params[:page], :per_page => 10)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vechicle

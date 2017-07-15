@@ -1,0 +1,32 @@
+<% content_for :title, "Rodzaje Parametrów" %>
+
+<div class="container">
+
+<h1 class=page-header>Rodzaje Parametrów</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Priorytet</th>
+      <th>Akcje</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vechicle_param_types.each do |vechicle_param_type| %>
+      <tr>
+        <td><%= vechicle_param_type.name %></td>
+        <td><%= vechicle_param_type.priority %></td>
+        <td><%= link_to 'Przejdź', vechicle_param_type, class:"btn btn-xs btn-success" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<div align="center">
+  <%= link_to 'Nowy rodzaje parametrów', new_vechicle_param_type_path, class:"btn btn-success" %>
+</div>
+
+</div>

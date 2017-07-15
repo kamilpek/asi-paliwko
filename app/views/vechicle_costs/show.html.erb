@@ -1,29 +1,20 @@
+<% content_for :title, "Koszt" %>
+<div class="container">
 
+<h1 class=page-header>Koszt</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @vechicle_cost.name %>
-</p>
+<p>Nazwa: <strong><%= @vechicle_cost.name %></strong></p>
+<p>Autor: <strong><%= User.where(id:@vechicle_cost.user_id).pluck(:first_name).last %>
+          <%= User.where(id:@vechicle_cost.user_id).pluck(:last_name).last %></strong></p>
+<p>Samochód: <strong><%= Vechicle.where(id:@vechicle_cost.vechicle_id).pluck(:plates).last %></strong></p>
+<p>Wartość: <strong><%= @vechicle_cost.cost %>zł</strong></p>
+<p>Opis: <strong><%= @vechicle_cost.desc %></strong></p>
 
-<p>
-  <strong>User:</strong>
-  <%= @vechicle_cost.user %>
-</p>
+<div align="center">
+  <%= link_to 'Edytuj', edit_vechicle_cost_path(@vechicle_cost), class:"btn btn-warning" %>
+  <%= link_to 'Lista kosztów', vechicle_costs_path, class:"btn btn-primary" %>
+  <%= link_to 'Powrót do samochodu', vechicle_path(@vechicle_cost.vechicle_id), class:"btn btn-default" %>
+</div>
 
-<p>
-  <strong>Vechicle:</strong>
-  <%= @vechicle_cost.vechicle %>
-</p>
-
-<p>
-  <strong>Cost:</strong>
-  <%= @vechicle_cost.cost %>
-</p>
-
-<p>
-  <strong>Desc:</strong>
-  <%= @vechicle_cost.desc %>
-</p>
-
-<%= link_to 'Edit', edit_vechicle_cost_path(@vechicle_cost) %> |
-<%= link_to 'Back', vechicle_costs_path %>
+</div>
+<br>

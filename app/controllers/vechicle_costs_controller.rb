@@ -62,6 +62,30 @@ class VechicleCostsController < ApplicationController
     end
   end
 
+  def print_resume_month
+    if params[:search].nil?
+      @vechicle_costs = VechicleCost.all
+    else
+      vechicle = Vechicle.where(id:params[:search]).pluck(:id).last
+      @vechicle_costs = VechicleCost.where(vechicle_id:vechicle)
+      params[:search] = nil
+    end
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @vechicle_costs = @vechicle_costs.where("to_char(created_at,'YYYY-MM') = ?", @date.strftime("%Y-%m"))
+  end
+
+  def print_resume_year
+    if params[:search].nil?
+      @vechicle_costs = VechicleCost.all
+    else
+      vechicle = Vechicle.where(id:params[:search]).pluck(:id).last
+      @vechicle_costs = VechicleCost.where(vechicle_id:vechicle)
+      params[:search] = nil
+    end
+    @date = params[:date] ? Date.parse(params[:date]) : Date.today
+    @vechicle_costs = @vechicle_costs.where("to_char(created_at,'YYYY') = ?", @date.strftime("%Y"))
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vechicle_cost

@@ -12,11 +12,11 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li><%= link_to "Samochody", vechicles_path %></li>
-        <li><%= link_to "Tankowania", vechicle_fuels_path %></li>
-        <li><%= link_to "Koszty", vechicle_costs_path %></li>
+        <li><%= link_to "Statystyki", stats_main_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
+        <li><%= link_to "Zaplecze", admin_main_path %></li>
         <li><%= link_to "Zalogowany jako #{User.where(id:current_user.id).pluck(:first_name).last} #{User.where(id:current_user.id).pluck(:last_name).last}", edit_user_registration_path, :title => "Zmiana hasła" %></li>
         <li><%= link_to 'Wyloguj', destroy_user_session_path, :title => "Wylogowanie ze systemu" %></li>
         <% else %>

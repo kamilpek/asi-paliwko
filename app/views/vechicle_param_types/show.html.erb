@@ -1,0 +1,16 @@
+<% content_for :title, "Rodzaj Parametrów" %>
+
+<div class="container">
+
+<h1 class=page-header>Rodzaj Parametrów</h1>
+
+<p>Name: <strong><%= @vechicle_param_type.name %></strong></p>
+
+<p>Priorytet: <strong><%= @vechicle_param_type.priority %></strong></p>
+
+<p>Status: <strong><%= "Aktywny" if @vechicle_param_type.status %></strong></p>
+
+<div align="center">
+  <%= link_to 'Edytuj', edit_vechicle_param_type_path(@vechicle_param_type), class:"btn btn-warning" %>
+  <%= link_to 'Lista rodzajów parametrów', vechicle_param_types_path, class:"btn btn-primary" %>
+</div>

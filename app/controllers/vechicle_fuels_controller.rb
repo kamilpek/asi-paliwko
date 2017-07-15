@@ -30,6 +30,7 @@ class VechicleFuelsController < ApplicationController
     respond_to do |format|
       if @vechicle_fuel.save
         fuel_number
+        create_cost
         format.html { redirect_to @vechicle_fuel, notice: 'Dodano tankowanie.' }
         format.json { render :show, status: :created, location: @vechicle_fuel }
       else
@@ -66,6 +67,15 @@ class VechicleFuelsController < ApplicationController
   def fuel_number
     @number = VechicleFuel.order(:id).pluck(:number).second_to_last.to_i
     VechicleFuel.update(@vechicle_fuel.id, :number => @number+1)
+  end
+
+  def create_cost
+    cost = @vechicle_fuel.cost
+    user_id = current_user.id
+    name = "Paliwo"
+    vechicle_id = @vechicle_fuel.vechicle_id
+    @vechicle_cost = VechicleCost.new(user_id:user_id, vechicle_id:vechicle_id, cost:cost, name:name)
+    @vechicle_cost.save
   end
 
   private

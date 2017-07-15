@@ -1,0 +1,26 @@
+<% content_for :title, "Statystyki kosztów" %>
+
+<div class="container">
+
+<h1 class=page-header>Statystyki kosztów</h1>
+
+<div class="row">
+  <div class="col-md-12">
+    <h5>Koszty według samochodów [zł]</h5>
+    <%= bar_chart @vechicle_costs.joins(:vechicle).group(:plates).sum(:cost) %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <h5>Wszystkie zgłoszenia kosztów z podziałem na samochody</h5>
+    <%= pie_chart @vechicle_costs.joins(:vechicle).group('vechicles.plates').count %>
+  </div>
+  <div class="col-md-6">
+    <h5>Udział samochodów w kosztach</h5>
+    <%= pie_chart @vechicle_costs.joins(:vechicle).group(:plates).sum(:cost) %>
+  </div>
+</div>
+
+</div>
+<br>

@@ -1,0 +1,73 @@
+<% content_for :title, "Parametry" %>
+
+<div class="container">
+  <h1 class="page-header"><%= "#{@vechicle.name} #{@vechicle.plates}" %>
+      <%= link_to "Powrót do samochodu", vechicle_path(@vechicle.id), class:"btn btn-sm btn-primary" %></h1>
+
+  <h4 class="page-header">Nowy parametr</h4>
+    <%= form_for VechicleParam.new do |f| %>
+      <%= f.hidden_field :vechicle_id, :value => @vechicle.id  %>
+      <%= f.hidden_field :user_id, :value => current_user.id %>
+      <div class="col-md-12">
+        <div class="input-group">
+          <span class="input-group-addon">Rodzaj</span>
+          <%= f.collection_select :vechicle_param_type_id, VechicleParamType.all, :id, :name, {prompt: "Wybierz"}, {class:"form-control", required: true} %>
+          <span class="input-group-addon">Wartość</span>
+            <%= f.number_field :value, :step => 0.1, :min => 0, class:"form-control", required: true %>
+          <span class="input-group-addon">Uwagi</span>
+            <%= f.text_field :desc, class:"form-control" %>
+          <span class="input-group-btn">
+            <%= f.submit "Zatwierdź", class:"btn btn-success" %>
+          </span>
+        </div>
+      </div>
+  <% end %>
+  <br>
+
+  <h4 class="page-header">Lista parametrów</h4>
+  <div class="row" align="center">
+    <div class="col-md-4">
+      <%= link_to vechicle_parameters_vechicle_path(date: @date - 1.day), class: "btn btn-info" do %>
+        <i class="fa-calendar-minus-o"> Poprzedni Dzień</i>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <h4 id="day"><%= @date %></h4>
+    </div>
+    <div class="col-md-4">
+      <%= link_to vechicle_parameters_vechicle_path(date: @date + 1.day), class: "btn btn-info" do %>
+        <i class="fa-calendar-plus-o"> Następny Dzień</i>
+      <% end %>
+    </div>
+  </div>
+  <br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Rodzaj</th>
+        <th>Wartosć</th>
+        <th>Data i czas</th>
+        <th>Autor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @vechicle_params.order("created_at desc").each do |vechicle_param| %>
+        <% if vechicle_param.created_at %>
+          <% if @date.strftime("%Y-%m-%d") == vechicle_param.created_at.strftime("%Y-%m-%d") %>
+          <tr>
+            <td><%= VechicleParamType.where(id:vechicle_param.vechicle_param_type).pluck(:name).last %></td>
+            <td><%= link_to vechicle_param.value, vechicle_param, title:vechicle_param.desc %></td>
+            <td><%= vechicle_param.created_at.strftime("%d.%m.%Y, %H:%M") if vechicle_param.created_at? %></td>
+            <td><%= "#{User.where(id:vechicle_param.user_id).pluck(:first_name).last[0]}#{User.where(id:vechicle_param.user_id).pluck(:last_name).last[0]}"%></td>
+          </tr>
+          <% end %>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+  <div align="center">
+    <p><%= will_paginate @vechicle_params, renderer: BootstrapPagination::Rails %></p>
+  </div>
+</div>
+</div>
+</br>
