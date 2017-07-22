@@ -34,7 +34,7 @@ Systemu komputerowego wspomagania zarządzania flotą pojazdów.
 * JSAPI
 
 ## Wersja produktu
-* v2.2.0 z dnia 22.07.2017
+* v2.2.1 z dnia 22.07.2017
 
 ## Autor
 [Kamil Pek](https://github.com/kamilpek)
