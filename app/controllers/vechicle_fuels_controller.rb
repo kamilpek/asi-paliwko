@@ -31,6 +31,8 @@ class VechicleFuelsController < ApplicationController
       if @vechicle_fuel.save
         fuel_number
         create_cost
+        fuel_consumption
+        update_mileage
         format.html { redirect_to @vechicle_fuel, notice: 'Dodano tankowanie.' }
         format.json { render :show, status: :created, location: @vechicle_fuel }
       else
@@ -78,6 +80,19 @@ class VechicleFuelsController < ApplicationController
     @vechicle_cost.save
   end
 
+  def update_mileage
+    Vechicle.update(@vechicle_fuel.vechicle_id, :mileage => @vechicle_fuel.mileage)
+  end
+
+  def fuel_consumption
+    @mileage = Vechicle.where(id:@vechicle_fuel.vechicle_id).pluck(:mileage).last
+    @mileage_delta = @vechicle_fuel.mileage.to_i - @mileage.to_i
+    @fuel = @vechicle_fuel.value.to_f
+    @consumption = ((@fuel.to_f/@mileage_delta.to_i)*100).round(2).to_f
+    VechicleFuel.update(@vechicle_fuel.id, :consumption => @consumption)
+    VechicleFuel.update(@vechicle_fuel.id, :mileage_delta => @mileage_delta)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_vechicle_fuel
@@ -86,6 +101,6 @@ class VechicleFuelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vechicle_fuel_params
-      params.require(:vechicle_fuel).permit(:company, :user_id, :vechicle_id, :value, :mileage, :desc, :cost, :number)
+      params.require(:vechicle_fuel).permit(:company, :user_id, :vechicle_id, :value, :mileage, :desc, :cost, :number, :consumption, :mileage_delta)
     end
 end

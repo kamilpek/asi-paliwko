@@ -13,6 +13,7 @@
     <p>Następny przegląd: <strong><%= @vechicle.nextrevison %></strong></p>
     <p>Opis: <strong><%= @vechicle.desc %></strong></p>
     <p>Przebieg: <strong><%= @vechicle.mileage %> km</strong></p>
+    <p>Spalanie z ostatniego tankowania: <strong><%= VechicleFuel.where(vechicle_id:@vechicle.id).pluck(:consumption).last %>l na 100km</strong></p>
     <p>
       <%= link_to 'Edycja pojazdu', edit_vechicle_path(@vechicle), class:"btn btn-warning" %>
       <%= link_to 'Lista pojazdów', vechicles_path, class:"btn btn-primary" %>

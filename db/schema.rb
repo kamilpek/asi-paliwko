@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170715152903) do
+ActiveRecord::Schema.define(version: 20170722183354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,10 +63,12 @@ ActiveRecord::Schema.define(version: 20170715152903) do
     t.integer  "value"
     t.integer  "mileage"
     t.text     "desc"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "number"
     t.integer  "cost"
+    t.float    "consumption"
+    t.integer  "mileage_delta"
     t.index ["user_id"], name: "index_vechicle_fuels_on_user_id", using: :btree
     t.index ["vechicle_id"], name: "index_vechicle_fuels_on_vechicle_id", using: :btree
   end

@@ -10,8 +10,12 @@
 <p>Samochód: <strong><%= Vechicle.where(id:@vechicle_fuel.vechicle_id).pluck(:plates).last %></strong></p>
 <p>Ilość: <strong><%= @vechicle_fuel.value %>l</strong></p>
 <p>Koszt: <strong><%= @vechicle_fuel.cost %>zł</strong></p>
+<p>Cena za litr: <strong><%= (@vechicle_fuel.cost.to_f/@vechicle_fuel.value.to_f) %>zł</strong></p>
 <p>Przebieg: <strong><%= @vechicle_fuel.mileage %>km</strong></p>
-<p>Uwagi: <strong><%= @vechicle_fuel.desc %></strong></p>
+<p>Różnica przebiegu: <strong><%= @vechicle_fuel.mileage_delta %>km</strong></p>
+<p>Spalanie: <strong><%= @vechicle_fuel.consumption %>l na 100km</strong></p>
+<p>Uwagi: <strong><%= @vechicle_fuel.desc if @vechicle_fuel.desc %>
+          <%= "Brak" unless @vechicle_fuel.desc %></strong></p>
 
 <div align="center">
   <%= link_to 'Edycja wpisu', edit_vechicle_fuel_path(@vechicle_fuel), class:"btn btn-warning" %>

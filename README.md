@@ -14,6 +14,8 @@ Systemu komputerowego wspomagania zarządzania flotą pojazdów.
     1. Korespondencja na temat pojazdów
     1. Przechowywanie załączników do pojazdów
     1. Rejestrowanie przebiegu pojazdów
+    1. Rejestr tankowań dla poszczególnych pojazdów
+    1. Obliczanie spalania poszczególnych pojazdów    
 1. Ogólne
     1. Panel Administracyjny
     1. Zmiany uprawnień użytkowników przez panel
@@ -32,7 +34,7 @@ Systemu komputerowego wspomagania zarządzania flotą pojazdów.
 * JSAPI
 
 ## Wersja produktu
-* v2.1.0 z dnia 15.07.2017
+* v2.2.0 z dnia 22.07.2017
 
 ## Autor
 [Kamil Pek](https://github.com/kamilpek)
