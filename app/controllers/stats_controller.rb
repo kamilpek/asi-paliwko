@@ -1,3 +1,4 @@
+# controller of Stats class
 class StatsController < ApplicationController
   before_filter :authenticate_user!
 

@@ -1,3 +1,4 @@
+# controller of Vechicle Notes class
 class VechicleNotesController < ApplicationController
   before_action :set_vechicle_note, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!

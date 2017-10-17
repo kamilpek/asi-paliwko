@@ -1,3 +1,4 @@
+# controller of Vechicle Fules class
 class VechicleFuelsController < ApplicationController
   before_action :set_vechicle_fuel, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!

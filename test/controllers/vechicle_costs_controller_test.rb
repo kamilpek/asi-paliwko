@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# test class of Vechicle CostsController 
 class VechicleCostsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @vechicle_cost = vechicle_costs(:one)

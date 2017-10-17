@@ -1,3 +1,4 @@
+# controller of Roles class
 class RolesController < ApplicationController
   before_action :set_role, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!

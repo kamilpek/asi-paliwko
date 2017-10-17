@@ -1,3 +1,4 @@
+# ActiveRecord migration of Vechicle Notes model
 class CreateVechicleNotes < ActiveRecord::Migration[5.0]
   def change
     create_table :vechicle_notes do |t|

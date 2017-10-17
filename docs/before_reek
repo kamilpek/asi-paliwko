@@ -1,0 +1,275 @@
+config/application.rb -- 1 warning:
+  [10]:IrresponsibleModule: Paliwko::Application has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/controllers/admin_controller_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: AdminControllerTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/controllers/pages_controller_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: PagesControllerTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/controllers/roles_controller_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: RolesControllerTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/controllers/stats_controller_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: StatsControllerTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/controllers/vechicle_costs_controller_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: VechicleCostsControllerTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/controllers/vechicle_fuels_controller_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: VechicleFuelsControllerTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/controllers/vechicle_notes_controller_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: VechicleNotesControllerTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/controllers/vechicle_param_types_controller_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: VechicleParamTypesControllerTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/controllers/vechicle_params_controller_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: VechicleParamsControllerTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/controllers/vechicles_controller_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: VechiclesControllerTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/models/role_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: RoleTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/models/user_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: UserTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/models/vechicle_cost_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: VechicleCostTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/models/vechicle_fuel_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: VechicleFuelTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/models/vechicle_note_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: VechicleNoteTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/models/vechicle_param_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: VechicleParamTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/models/vechicle_param_type_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: VechicleParamTypeTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/models/vechicle_test.rb -- 1 warning:
+  [3]:IrresponsibleModule: VechicleTest has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+test/test_helper.rb -- 1 warning:
+  [5]:IrresponsibleModule: ActiveSupport::TestCase has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+lib/calendar.rb -- 3 warnings:
+  [33, 34, 35, 35]:FeatureEnvy: Calendar#day_classes refers to 'classes' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md]
+  [1]:IrresponsibleModule: Calendar has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [22]:NestedIterators: Calendar#week_rows contains iterators nested 2 deep [https://github.com/troessner/reek/blob/master/docs/Nested-Iterators.md]
+db/migrate/20170711173915_devise_create_users.rb -- 4 warnings:
+  [5, 6, 9, 10, 13, 16, 17, 18, 19, 20, 34]:FeatureEnvy: DeviseCreateUsers#change refers to 't' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md]
+  [1]:IrresponsibleModule: DeviseCreateUsers has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [2]:TooManyStatements: DeviseCreateUsers#change has approx 14 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [3]:UncommunicativeVariableName: DeviseCreateUsers#change has the variable name 't' [https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md]
+db/migrate/20170711174546_add_name_to_users.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddNameToUsers has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+db/migrate/20170711174605_create_roles.rb -- 3 warnings:
+  [4, 5, 7]:FeatureEnvy: CreateRoles#change refers to 't' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md]
+  [1]:IrresponsibleModule: CreateRoles has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [3]:UncommunicativeVariableName: CreateRoles#change has the variable name 't' [https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md]
+db/migrate/20170711174619_create_vechicles.rb -- 4 warnings:
+  [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16]:FeatureEnvy: CreateVechicles#change refers to 't' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md]
+  [1]:IrresponsibleModule: CreateVechicles has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [2]:TooManyStatements: CreateVechicles#change has approx 13 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [3]:UncommunicativeVariableName: CreateVechicles#change has the variable name 't' [https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md]
+db/migrate/20170711174624_create_vechicle_notes.rb -- 3 warnings:
+  [4, 5, 6, 8]:FeatureEnvy: CreateVechicleNotes#change refers to 't' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md]
+  [1]:IrresponsibleModule: CreateVechicleNotes has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [3]:UncommunicativeVariableName: CreateVechicleNotes#change has the variable name 't' [https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md]
+db/migrate/20170711174628_create_vechicle_costs.rb -- 4 warnings:
+  [4, 5, 6, 7, 8, 10]:FeatureEnvy: CreateVechicleCosts#change refers to 't' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md]
+  [1]:IrresponsibleModule: CreateVechicleCosts has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [2]:TooManyStatements: CreateVechicleCosts#change has approx 7 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [3]:UncommunicativeVariableName: CreateVechicleCosts#change has the variable name 't' [https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md]
+db/migrate/20170711174632_create_vechicle_fuels.rb -- 4 warnings:
+  [4, 5, 6, 7, 8, 9, 11]:FeatureEnvy: CreateVechicleFuels#change refers to 't' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md]
+  [1]:IrresponsibleModule: CreateVechicleFuels has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [2]:TooManyStatements: CreateVechicleFuels#change has approx 8 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [3]:UncommunicativeVariableName: CreateVechicleFuels#change has the variable name 't' [https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md]
+db/migrate/20170714160550_add_number_to_vechcile_fuels.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddNumberToVechcileFuels has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+db/migrate/20170714165609_add_cost_to_vechicle_fuel.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddCostToVechicleFuel has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+db/migrate/20170715132649_create_vechicle_param_types.rb -- 3 warnings:
+  [4, 5, 6, 8]:FeatureEnvy: CreateVechicleParamTypes#change refers to 't' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md]
+  [1]:IrresponsibleModule: CreateVechicleParamTypes has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [3]:UncommunicativeVariableName: CreateVechicleParamTypes#change has the variable name 't' [https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md]
+db/migrate/20170715132656_create_vechicle_params.rb -- 4 warnings:
+  [4, 5, 6, 7, 9]:FeatureEnvy: CreateVechicleParams#change refers to 't' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md]
+  [1]:IrresponsibleModule: CreateVechicleParams has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [2]:TooManyStatements: CreateVechicleParams#change has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [3]:UncommunicativeVariableName: CreateVechicleParams#change has the variable name 't' [https://github.com/troessner/reek/blob/master/docs/Uncommunicative-Variable-Name.md]
+db/migrate/20170715134642_add_vechicle_id_to_vechicle_params.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddVechicleIdToVechicleParams has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+db/migrate/20170715140620_change_column_values_in_vechciel_params.rb -- 1 warning:
+  [1]:IrresponsibleModule: ChangeColumnValuesInVechcielParams has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+db/migrate/20170715152433_add_admin_to_users.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddAdminToUsers has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+db/migrate/20170715152903_add_role_to_users.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddRoleToUsers has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+db/migrate/20170722181620_add_consumption_to_vechicle_fuels.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddConsumptionToVechicleFuels has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+db/migrate/20170722183354_add_mileage_delta_to_vechicle_fuels.rb -- 1 warning:
+  [1]:IrresponsibleModule: AddMileageDeltaToVechicleFuels has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/channels/application_cable/channel.rb -- 1 warning:
+  [2]:IrresponsibleModule: ApplicationCable::Channel has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/channels/application_cable/connection.rb -- 1 warning:
+  [2]:IrresponsibleModule: ApplicationCable::Connection has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/controllers/admin_controller.rb -- 6 warnings:
+  [11, 14]:DuplicateMethodCall: AdminController#users calls 'params[:page]' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [9, 13]:DuplicateMethodCall: AdminController#users calls 'params[:search]' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [1]:InstanceVariableAssumption: AdminController assumes too much for instance variable '@users' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:IrresponsibleModule: AdminController has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [9]:NilCheck: AdminController#users performs a nil-check [https://github.com/troessner/reek/blob/master/docs/Nil-Check.md]
+  [7]:TooManyStatements: AdminController#users has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+app/controllers/application_controller.rb -- 1 warning:
+  [1]:IrresponsibleModule: ApplicationController has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/controllers/pages_controller.rb -- 1 warning:
+  [1]:IrresponsibleModule: PagesController has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/controllers/roles_controller.rb -- 9 warnings:
+  [32, 35]:DuplicateMethodCall: RolesController#create calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [33, 36]:DuplicateMethodCall: RolesController#create calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [46, 49]:DuplicateMethodCall: RolesController#update calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [47, 50]:DuplicateMethodCall: RolesController#update calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [1]:InstanceVariableAssumption: RolesController assumes too much for instance variable '@role' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:IrresponsibleModule: RolesController has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [27]:TooManyStatements: RolesController#create has approx 10 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [57]:TooManyStatements: RolesController#destroy has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [43]:TooManyStatements: RolesController#update has approx 9 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+app/controllers/stats_controller.rb -- 1 warning:
+  [1]:IrresponsibleModule: StatsController has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/controllers/users_controller.rb -- 11 warnings:
+  [42, 44]:DuplicateMethodCall: UsersController#addnotes calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [20, 22]:DuplicateMethodCall: UsersController#create calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [51, 53]:DuplicateMethodCall: UsersController#destroy calls '@user.destroy' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [31, 33]:DuplicateMethodCall: UsersController#update calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [71, 72, 73, 74]:FeatureEnvy: UsersController#resetpassword refers to 'user' more than self (maybe move it to another class?) [https://github.com/troessner/reek/blob/master/docs/Feature-Envy.md]
+  [1]:InstanceVariableAssumption: UsersController assumes too much for instance variable '@user' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:IrresponsibleModule: UsersController has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [38]:TooManyStatements: UsersController#addnotes has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [15]:TooManyStatements: UsersController#create has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [69]:TooManyStatements: UsersController#resetpassword has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [27]:TooManyStatements: UsersController#update has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+app/controllers/vechicle_costs_controller.rb -- 19 warnings:
+  [32, 35]:DuplicateMethodCall: VechicleCostsController#create calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [33, 36]:DuplicateMethodCall: VechicleCostsController#create calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [73, 73]:DuplicateMethodCall: VechicleCostsController#print_resume_month calls 'params[:date]' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [66, 69]:DuplicateMethodCall: VechicleCostsController#print_resume_month calls 'params[:search]' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [85, 85]:DuplicateMethodCall: VechicleCostsController#print_resume_year calls 'params[:date]' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [78, 81]:DuplicateMethodCall: VechicleCostsController#print_resume_year calls 'params[:search]' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [46, 49]:DuplicateMethodCall: VechicleCostsController#update calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [47, 50]:DuplicateMethodCall: VechicleCostsController#update calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [1]:InstanceVariableAssumption: VechicleCostsController assumes too much for instance variable '@date' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:InstanceVariableAssumption: VechicleCostsController assumes too much for instance variable '@vechicle_cost' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:InstanceVariableAssumption: VechicleCostsController assumes too much for instance variable '@vechicle_costs' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:IrresponsibleModule: VechicleCostsController has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [66]:NilCheck: VechicleCostsController#print_resume_month performs a nil-check [https://github.com/troessner/reek/blob/master/docs/Nil-Check.md]
+  [78]:NilCheck: VechicleCostsController#print_resume_year performs a nil-check [https://github.com/troessner/reek/blob/master/docs/Nil-Check.md]
+  [27]:TooManyStatements: VechicleCostsController#create has approx 10 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [57]:TooManyStatements: VechicleCostsController#destroy has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [65]:TooManyStatements: VechicleCostsController#print_resume_month has approx 7 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [77]:TooManyStatements: VechicleCostsController#print_resume_year has approx 7 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [43]:TooManyStatements: VechicleCostsController#update has approx 9 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+app/controllers/vechicle_fuels_controller.rb -- 19 warnings:
+  [36, 39]:DuplicateMethodCall: VechicleFuelsController#create calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [37, 40]:DuplicateMethodCall: VechicleFuelsController#create calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [92, 93]:DuplicateMethodCall: VechicleFuelsController#fuel_consumption calls '@vechicle_fuel.id' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [50, 53]:DuplicateMethodCall: VechicleFuelsController#update calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [51, 54]:DuplicateMethodCall: VechicleFuelsController#update calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [1]:InstanceVariableAssumption: VechicleFuelsController assumes too much for instance variable '@consumption' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:InstanceVariableAssumption: VechicleFuelsController assumes too much for instance variable '@fuel' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:InstanceVariableAssumption: VechicleFuelsController assumes too much for instance variable '@mileage' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:InstanceVariableAssumption: VechicleFuelsController assumes too much for instance variable '@mileage_delta' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:InstanceVariableAssumption: VechicleFuelsController assumes too much for instance variable '@number' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:InstanceVariableAssumption: VechicleFuelsController assumes too much for instance variable '@vechicle_cost' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:InstanceVariableAssumption: VechicleFuelsController assumes too much for instance variable '@vechicle_fuel' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:IrresponsibleModule: VechicleFuelsController has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [1]:TooManyInstanceVariables: VechicleFuelsController has at least 8 instance variables [https://github.com/troessner/reek/blob/master/docs/Too-Many-Instance-Variables.md]
+  [27]:TooManyStatements: VechicleFuelsController#create has approx 14 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [74]:TooManyStatements: VechicleFuelsController#create_cost has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [61]:TooManyStatements: VechicleFuelsController#destroy has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [87]:TooManyStatements: VechicleFuelsController#fuel_consumption has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [47]:TooManyStatements: VechicleFuelsController#update has approx 9 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+app/controllers/vechicle_notes_controller.rb -- 9 warnings:
+  [32, 35]:DuplicateMethodCall: VechicleNotesController#create calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [33, 36]:DuplicateMethodCall: VechicleNotesController#create calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [46, 49]:DuplicateMethodCall: VechicleNotesController#update calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [47, 50]:DuplicateMethodCall: VechicleNotesController#update calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [1]:InstanceVariableAssumption: VechicleNotesController assumes too much for instance variable '@vechicle_note' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:IrresponsibleModule: VechicleNotesController has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [27]:TooManyStatements: VechicleNotesController#create has approx 10 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [57]:TooManyStatements: VechicleNotesController#destroy has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [43]:TooManyStatements: VechicleNotesController#update has approx 9 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+app/controllers/vechicle_param_types_controller.rb -- 9 warnings:
+  [31, 34]:DuplicateMethodCall: VechicleParamTypesController#create calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [32, 35]:DuplicateMethodCall: VechicleParamTypesController#create calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [45, 48]:DuplicateMethodCall: VechicleParamTypesController#update calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [46, 49]:DuplicateMethodCall: VechicleParamTypesController#update calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [1]:InstanceVariableAssumption: VechicleParamTypesController assumes too much for instance variable '@vechicle_param_type' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:IrresponsibleModule: VechicleParamTypesController has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [26]:TooManyStatements: VechicleParamTypesController#create has approx 10 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [56]:TooManyStatements: VechicleParamTypesController#destroy has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [42]:TooManyStatements: VechicleParamTypesController#update has approx 9 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+app/controllers/vechicle_params_controller.rb -- 9 warnings:
+  [31, 34]:DuplicateMethodCall: VechicleParamsController#create calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [32, 35]:DuplicateMethodCall: VechicleParamsController#create calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [45, 48]:DuplicateMethodCall: VechicleParamsController#update calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [46, 49]:DuplicateMethodCall: VechicleParamsController#update calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [1]:InstanceVariableAssumption: VechicleParamsController assumes too much for instance variable '@vechicle_param' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:IrresponsibleModule: VechicleParamsController has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [26]:TooManyStatements: VechicleParamsController#create has approx 10 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [56]:TooManyStatements: VechicleParamsController#destroy has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [42]:TooManyStatements: VechicleParamsController#update has approx 9 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+app/controllers/vechicles_controller.rb -- 17 warnings:
+  [35, 38]:DuplicateMethodCall: VechiclesController#create calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [36, 39]:DuplicateMethodCall: VechiclesController#create calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [49, 52]:DuplicateMethodCall: VechiclesController#update calls 'format.html' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [50, 53]:DuplicateMethodCall: VechiclesController#update calls 'format.json' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [85, 85]:DuplicateMethodCall: VechiclesController#vechicle_costs calls 'params[:date]' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [78, 78]:DuplicateMethodCall: VechiclesController#vechicle_fuels calls 'params[:date]' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [71, 71]:DuplicateMethodCall: VechiclesController#vechicle_parameters calls 'params[:date]' 2 times [https://github.com/troessner/reek/blob/master/docs/Duplicate-Method-Call.md]
+  [1]:InstanceVariableAssumption: VechiclesController assumes too much for instance variable '@vechicle' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:InstanceVariableAssumption: VechiclesController assumes too much for instance variable '@vechicle_costs' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:InstanceVariableAssumption: VechiclesController assumes too much for instance variable '@vechicle_fuels' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:InstanceVariableAssumption: VechiclesController assumes too much for instance variable '@vechicle_params' [https://github.com/troessner/reek/blob/master/docs/Instance-Variable-Assumption.md]
+  [1]:IrresponsibleModule: VechiclesController has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+  [71, 78, 85]:RepeatedConditional: VechiclesController tests 'params[:date]' at least 3 times [https://github.com/troessner/reek/blob/master/docs/Repeated-Conditional.md]
+  [1]:TooManyInstanceVariables: VechiclesController has at least 7 instance variables [https://github.com/troessner/reek/blob/master/docs/Too-Many-Instance-Variables.md]
+  [30]:TooManyStatements: VechiclesController#create has approx 10 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [60]:TooManyStatements: VechiclesController#destroy has approx 6 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+  [46]:TooManyStatements: VechiclesController#update has approx 9 statements [https://github.com/troessner/reek/blob/master/docs/Too-Many-Statements.md]
+app/helpers/admin_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: AdminHelper has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/helpers/application_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: ApplicationHelper has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/helpers/pages_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: PagesHelper has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/helpers/roles_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: RolesHelper has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/helpers/stats_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: StatsHelper has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/helpers/vechicle_costs_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechicleCostsHelper has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/helpers/vechicle_fuels_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechicleFuelsHelper has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/helpers/vechicle_notes_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechicleNotesHelper has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/helpers/vechicle_param_types_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechicleParamTypesHelper has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/helpers/vechicle_params_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechicleParamsHelper has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/helpers/vechicles_helper.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechiclesHelper has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/jobs/application_job.rb -- 1 warning:
+  [1]:IrresponsibleModule: ApplicationJob has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/mailers/application_mailer.rb -- 1 warning:
+  [1]:IrresponsibleModule: ApplicationMailer has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/models/application_record.rb -- 1 warning:
+  [1]:IrresponsibleModule: ApplicationRecord has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/models/role.rb -- 1 warning:
+  [1]:IrresponsibleModule: Role has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/models/user.rb -- 1 warning:
+  [1]:IrresponsibleModule: User has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/models/vechicle.rb -- 1 warning:
+  [1]:IrresponsibleModule: Vechicle has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/models/vechicle_cost.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechicleCost has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/models/vechicle_fuel.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechicleFuel has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/models/vechicle_note.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechicleNote has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/models/vechicle_param.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechicleParam has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/models/vechicle_param_type.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechicleParamType has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/uploaders/vechicle_attachments_uploader.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechicleAttachmentsUploader has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+app/uploaders/vechicle_photo_uploader.rb -- 1 warning:
+  [1]:IrresponsibleModule: VechiclePhotoUploader has no descriptive comment [https://github.com/troessner/reek/blob/master/docs/Irresponsible-Module.md]
+198 total warnings

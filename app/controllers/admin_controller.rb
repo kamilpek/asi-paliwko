@@ -1,3 +1,4 @@
+# controller of Admin class
 class AdminController < ApplicationController
   before_filter :authenticate_user!
 
@@ -5,13 +6,10 @@ class AdminController < ApplicationController
   end
 
   def users
-    @users = User.all
     if params[:search].nil?
-      @users = @users
-      @users = @users.paginate(:page => params[:page], :per_page => 15)
+      @users = User.paginate(:page => params[:page], :per_page => 15)
     else
-      @users = @users.where(["department_id = ?", params[:search]])
-      @users = @users.paginate(:page => params[:page], :per_page => 1000)
+      @users = User.where(["department_id = ?", params[:search]]).paginate(:page => params[:page], :per_page => 1000)
       params[:search] = nil
     end
   end

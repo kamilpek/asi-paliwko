@@ -1,3 +1,4 @@
+# controller of Vechicle Costs class
 class VechicleCostsController < ApplicationController
   before_action :set_vechicle_cost, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!

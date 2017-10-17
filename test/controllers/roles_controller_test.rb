@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# test class of Roles Controller
 class RolesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @role = roles(:one)

@@ -1,3 +1,4 @@
+# ActiveRecord migration of Vechicle Costs model
 class CreateVechicleCosts < ActiveRecord::Migration[5.0]
   def change
     create_table :vechicle_costs do |t|

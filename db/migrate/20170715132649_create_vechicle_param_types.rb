@@ -1,3 +1,4 @@
+# ActiveRecord migration of Vechicle Param Types model
 class CreateVechicleParamTypes < ActiveRecord::Migration[5.0]
   def change
     create_table :vechicle_param_types do |t|

@@ -1,3 +1,4 @@
+# model of Vechicle Param class
 class Vechicle < ApplicationRecord
   has_many :vechicle_fuels
 

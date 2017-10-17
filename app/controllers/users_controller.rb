@@ -1,3 +1,4 @@
+# controller of Users class
 class UsersController < ApplicationController
 
   def new

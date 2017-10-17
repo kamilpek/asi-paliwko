@@ -1,3 +1,4 @@
+# ActiveRecord migration of Vechicle Fuels model
 class CreateVechicleFuels < ActiveRecord::Migration[5.0]
   def change
     create_table :vechicle_fuels do |t|

@@ -1,3 +1,4 @@
+# controller of Vechicles class
 class VechiclesController < ApplicationController
   before_action :set_vechicle, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!

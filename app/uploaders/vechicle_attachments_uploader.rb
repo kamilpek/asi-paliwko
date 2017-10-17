@@ -1,3 +1,4 @@
+# uploader of Vechicle Attachments class
 class VechicleAttachmentsUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:

@@ -1,3 +1,4 @@
+# uploader of Vechicle Photo class
 class VechiclePhotoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:

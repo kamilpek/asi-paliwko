@@ -1,3 +1,4 @@
+# calendar library
 class Calendar < Struct.new(:view, :date, :callback)
     HEADER = %w[Poniedziałek Wtorek Środa Czwartek Piątek Sobota Niedziela]
     START_DAY = :monday

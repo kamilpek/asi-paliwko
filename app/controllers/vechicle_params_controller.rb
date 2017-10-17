@@ -1,3 +1,4 @@
+# controller of Vechicle Params class
 class VechicleParamsController < ApplicationController
   before_action :set_vechicle_param, only: [:show, :edit, :update, :destroy]
 

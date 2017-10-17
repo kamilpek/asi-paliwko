@@ -1,3 +1,4 @@
+# controller of Vechicle Param Types class
 class VechicleParamTypesController < ApplicationController
   before_action :set_vechicle_param_type, only: [:show, :edit, :update, :destroy]
 

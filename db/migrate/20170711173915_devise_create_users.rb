@@ -1,3 +1,4 @@
+# ActiveRecord migration of Users model
 class DeviseCreateUsers < ActiveRecord::Migration[5.0]
   def change
     create_table :users do |t|

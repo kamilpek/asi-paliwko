@@ -1,5 +1,6 @@
 require 'test_helper'
 
+# test class of Vechicle Param Types Controller 
 class VechicleParamTypesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @vechicle_param_type = vechicle_param_types(:one)
