@@ -16,3 +16,26 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar-paliwko {
+  background-color: #3E606F;
+  border-color: #193441;
+}
+
+.input-group-addon {
+  color: #FCFFF5;
+  background-color: #3E606F;
+  border-color: #193441;
+}
+
+.form-control {
+  border-color: #193441;
+}
+
+body {
+  background-color: #FCFFF5;
+}
+
+h5, h4, h3, h2, h1 {
+  color: #3E606F !important;
+}

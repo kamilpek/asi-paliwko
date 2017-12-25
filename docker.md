@@ -1,26 +1,56 @@
 # Paliwko with Docker
 
-## Komendy
-1. Start bazy danych
+Start sieci
 ```bash
-sudo docker-compose up -d db
+sudo docker network create --driver=bridge kps
 ```
-1. Budowa aplikacji
+
+Start bazy danych
+```bash
+sudo docker-compose up -d postgres_db
+sudo docker start postgres_db
+sudo docker run --name postgres_db -e POSTGRES_PASSWORD=super_secure --net=kps -d postgres
+```
+
+Budowa aplikacji
 ```bash
 sudo docker-compose build app
 ```
 
-1. Tworzenie bazy i uruchomienie migracji
+Tworzenie bazy i uruchomienie migracji
 ```bash
-sudo docker-compose run --rm app rake db:create db:migrate
+sudo docker-compose run --rm app rake db:create db:migrate RAILS_ENV=production
+sudo docker-compose run --rm app rake db:create db:migrate RAILS_ENV=development
+
 ```
 
-1. Tworzenie użytkownika
+Tworzenie użytkownika
 ```bash
-sudo docker-compose run --rm app rake create_user
+sudo docker-compose run --rm app rake create_user RAILS_ENV=production
+sudo docker-compose run --rm app rake create_user RAILS_ENV=development
 ```
 
-1. Uruchomienie aplikacji
+Kompilowanie asstesów
+```bash
+sudo docker-compose run --rm app rake assets:precompile RAILS_ENV=production
+```
+
+Uruchomienie aplikacji
 ```bash
 sudo docker-compose up -d app
+```
+
+Przejście do konsoli w aplikacji
+```bash
+sudo docker-compose exec app bash
+```
+
+Startowanie/Wygaszanie aplikacji
+```bash
+sudo docker-compose start/stop
+```
+
+Czyszczenie obrazów dockera
+```bash
+sudo docker rmi --force $(sudo docker images | grep "^<none>" | awk "{print $3}")
 ```
